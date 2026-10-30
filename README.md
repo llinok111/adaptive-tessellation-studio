@@ -39,8 +39,8 @@ From `bench/result.json` (Node v24.19.0, 11 samples, 1 warmup, batched timing):
 | triangles (bumpy-sphere) | **1,790** | 6,050 (n=55) | — |
 | triangle reduction | **70.4%** | — | ≥ 60% (asserted) |
 | Hausdorff / bbox diagonal | 0.213% | 0.203% | ≤ 0.5% (asserted) |
-| build time, median | 2.96 ms | 0.61 ms | — |
-| build time, cold start | 11.86 ms | — | — |
+| build time, median | 3.00 ms | 0.63 ms | — |
+| build time, cold start | 12.51 ms | — | — |
 
 The 70.4% is the headline; the other two presets are reported as they measured, including a
 regression case:
@@ -71,8 +71,8 @@ regression case:
 - **Adaptive tessellation is not a free win.** The ridged-torus preset has high-frequency curvature
   everywhere, so the quadtree overhead is real and the gain collapses to 3.3%. The method pays off
   only when curvature is spatially concentrated; this is reported rather than hidden.
-- **Relative stddev is above 10%** for the timing metrics (20.9% adaptive, 14.5% uniform). This is a
-  shared 4-core VM: one of the 11 samples hit a GC pause (p95 5.11 ms vs median 2.96 ms). Medians
+- **Relative stddev is above 10%** for the timing metrics (13.6% adaptive, 13.1% uniform). This is a
+  shared 4-core VM: one of the 11 samples hit a GC pause (p95 4.42 ms vs median 3.00 ms). Medians
   and minima are stable across runs; treat the p95 as a jitter ceiling, not a typical build time.
 - The quadtree splits isotropically, so anisotropic features (long ridges) are over-refined in the
   narrow direction. An anisotropic metric is the obvious next step.
