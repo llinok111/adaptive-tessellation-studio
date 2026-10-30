@@ -1,0 +1,12 @@
+{
+  "name": "adaptive-tessellation-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Curvature-adaptive parametric tessellation with a measured uniform-mesh baseline",
+  "scripts": {
+    "verify": "node bench/verify.mjs",
+    "bench": "node bench/bench.mjs",
+    "gen": "node tools/gen-sample.mjs"
+  }
+}

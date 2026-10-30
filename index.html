@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Adaptive Tessellation Studio</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0e14; color: #d7dce6;
+    font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  #app { position: fixed; inset: 0; }
+  canvas { display: block; }
+  .panel { position: fixed; background: rgba(14,18,26,.86); border: 1px solid #232b3a;
+    border-radius: 10px; padding: 12px 14px; backdrop-filter: blur(6px); }
+  #hud { top: 16px; left: 16px; width: 320px; }
+  #hud h1 { margin: 0 0 6px; font-size: 14px; letter-spacing: .02em; color: #fff; }
+  #hud .sub { color: #7d8798; margin-bottom: 10px; }
+  #hud .row { display: flex; justify-content: space-between; gap: 10px; padding: 2px 0; }
+  #hud .row b { color: #fff; font-weight: 600; }
+  .good { color: #5ee0a0; } .warn { color: #ffc46b; }
+  #legend { bottom: 16px; left: 16px; display: flex; align-items: center; gap: 10px; }
+  #bar { width: 140px; height: 8px; border-radius: 4px;
+    background: linear-gradient(90deg,#2b6cff,#39d0ff,#ffd166,#ff6b6b); }
+  #keys { bottom: 16px; right: 16px; color: #7d8798; }
+  #keys kbd { background: #1b2230; border: 1px solid #2c3648; border-radius: 4px;
+    padding: 1px 5px; color: #cfd6e4; }
+  .tag { position: fixed; top: 18px; font-size: 12px; color: #8b95a8; letter-spacing: .08em;
+    text-transform: uppercase; }
+  #tagL { left: 352px; } #tagR { right: 16px; }
+  #err { position: fixed; inset: 0; display: none; place-items: center; color: #ff8b8b;
+    padding: 40px; text-align: center; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div id="hud" class="panel">
+  <h1>Adaptive Tessellation Studio</h1>
+  <div class="sub">Same error budget, far fewer triangles.</div>
+  <div class="row"><span>preset</span><b id="s-preset">—</b></div>
+  <div class="row"><span>adaptive triangles</span><b id="s-ad">—</b></div>
+  <div class="row"><span>uniform triangles (n=<span id="s-n">—</span>)</span><b id="s-uni">—</b></div>
+  <div class="row"><span>reduction</span><b id="s-red" class="good">—</b></div>
+  <div class="row"><span>Hausdorff / diagonal</span><b id="s-err">—</b></div>
+  <div class="row"><span>error budget</span><b>0.5%</b></div>
+</div>
+<div id="tagL" class="tag">adaptive quadtree</div>
+<div id="tagR" class="tag">uniform baseline</div>
+<div id="legend" class="panel"><span>patch depth</span><div id="bar"></div><span>0 → 8</span></div>
+<div id="keys" class="panel"><kbd>drag</kbd> orbit · <kbd>W</kbd> wireframe · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> preset</div>
+<div id="err"></div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

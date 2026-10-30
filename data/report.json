@@ -1,0 +1,72 @@
+{
+  "generatedBy": "tools/gen-sample.mjs",
+  "tolerance": 0.008,
+  "presets": [
+    {
+      "id": "bumpy-sphere",
+      "label": "Bumpy sphere",
+      "tolerance": 0.008,
+      "diagonal": 3.55492,
+      "relativeTolerance": 0.00225,
+      "adaptive": {
+        "triangles": 1790,
+        "vertices": 3580,
+        "maxDepth": 6,
+        "hausdorff": 0.00756,
+        "hausdorffMean": 0.00273
+      },
+      "uniform": {
+        "resolution": 55,
+        "triangles": 6050,
+        "vertices": 3136,
+        "hausdorff": 0.00723,
+        "hausdorffMean": 0.00081
+      },
+      "triangleReduction": 0.70413
+    },
+    {
+      "id": "ridged-torus",
+      "label": "Ridged torus",
+      "tolerance": 0.008,
+      "diagonal": 4.11537,
+      "relativeTolerance": 0.00194,
+      "adaptive": {
+        "triangles": 11168,
+        "vertices": 22336,
+        "maxDepth": 7,
+        "hausdorff": 0.00944,
+        "hausdorffMean": 0.00218
+      },
+      "uniform": {
+        "resolution": 76,
+        "triangles": 11552,
+        "vertices": 5929,
+        "hausdorff": 0.00475,
+        "hausdorffMean": 0.002
+      },
+      "triangleReduction": 0.03324
+    },
+    {
+      "id": "terrain-ridge",
+      "label": "Terrain ridge",
+      "tolerance": 0.008,
+      "diagonal": 2.8716,
+      "relativeTolerance": 0.00279,
+      "adaptive": {
+        "triangles": 1796,
+        "vertices": 3592,
+        "maxDepth": 6,
+        "hausdorff": 0.00995,
+        "hausdorffMean": 0.00191
+      },
+      "uniform": {
+        "resolution": 36,
+        "triangles": 2592,
+        "vertices": 1369,
+        "hausdorff": 0.00742,
+        "hausdorffMean": 0.00145
+      },
+      "triangleReduction": 0.3071
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "presets": [
+    {
+      "id": "bumpy-sphere",
+      "label": "Bumpy sphere",
+      "radius": 1,
+      "bumpAmp": 0.3,
+      "bumpCenter": [
+        0.32,
+        0.62
+      ],
+      "bumpWidth": 0.008,
+      "waveAmp": 0,
+      "kind": "sphere"
+    },
+    {
+      "id": "ridged-torus",
+      "label": "Ridged torus",
+      "major": 1,
+      "minor": 0.34,
+      "ridgeAmp": 0.11,
+      "ridgeFreq": 5,
+      "kind": "torus"
+    },
+    {
+      "id": "terrain-ridge",
+      "label": "Terrain ridge",
+      "extent": 2,
+      "ridgeAmp": 0.42,
+      "ridgeWidth": 0.055,
+      "ridgeFreq": 4,
+      "kind": "heightfield"
+    }
+  ],
+  "tolerance": 0.008,
+  "maxDepth": 8
+}

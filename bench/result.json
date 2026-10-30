@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-10-30T18:43:42.808Z",
+  "node": "v24.19.0",
+  "preset": "bumpy-sphere",
+  "tolerance": 0.008,
+  "repeats": 11,
+  "batchAdaptive": 10,
+  "batchUniform": 20,
+  "coldStartMs": 12.508,
+  "adaptiveBuildMs": {
+    "min": 2.983557300000001,
+    "median": 3.0024297000000018,
+    "p95": 4.4185374,
+    "stddev": 0.4094659879798903,
+    "samples": 11
+  },
+  "uniformBuildMs": {
+    "min": 0.5996743999999978,
+    "median": 0.6251542000000001,
+    "p95": 0.8573660499999989,
+    "stddev": 0.08209601493089179,
+    "samples": 11
+  },
+  "baselineSearchPlusEvalMs": 985.24,
+  "triangles": {
+    "adaptive": 1790,
+    "uniform": 6050
+  },
+  "reduction": 0.7041,
+  "hausdorffPctOfDiagonal": 0.2127
+}
